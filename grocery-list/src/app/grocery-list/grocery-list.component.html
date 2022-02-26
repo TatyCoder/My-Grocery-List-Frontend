@@ -1,1 +1,12 @@
-<p>grocery-list works!</p>
+<div class="container">
+  <div class="row">
+    <ul class="list-group col-8" class="list-group col-4">
+        <ng-container *ngFor="let groceryList of groceryLists">
+            <li class="list-group-item">{{groceryList.name}}  
+                <!-- <button (click)="deleteList(user.userId)" type="button" class="btn btn-secondary">Delete List</button> -->
+            </li>
+          </ng-container>
+
+    </ul>
+  </div>
+</div>

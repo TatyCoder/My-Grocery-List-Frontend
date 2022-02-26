@@ -22,4 +22,9 @@ export class GroceryListService {
   deleteUser(id: number) {
     return this.http.delete('/api/user/' + id);
   }
+
+  getGroceryListsForUser(id: number) {
+    return this.http
+    .get('/api/user/' + id + '/groceryList'); 
+  }
 }
