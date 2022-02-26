@@ -13,4 +13,9 @@ export class GroceryListService {
     return this.http
     .get('/api/user'); 
   }
+
+  createUser(name: string) {
+    return this.http
+    .post('/api/user', {name: name}); 
+  }
 }

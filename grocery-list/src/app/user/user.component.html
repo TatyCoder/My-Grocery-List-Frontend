@@ -1,7 +1,16 @@
 <div class="container">
+    <h3>Existing users</h3>
   <div class="row">
-    <ul class="list-group col-4" *ngFor="let user of users">
-      <li class="list-group-item">{{user.name}}</li>
+    <ul class="list-group col-4">
+      <ng-container *ngFor="let user of users">
+        <li class="list-group-item">{{user.name}}</li>
+      </ng-container>
     </ul>
+  </div>
+  <div class="row"> 
+      <div class="list-group col-4">
+        <button (click)="addUser()" type="button" class="btn btn-primary">Add User</button>
+        <input type="text" name="newUser" id="newUser" [(ngModel)]="newUserName">
+      </div>
   </div>
 </div>

@@ -10,6 +10,8 @@ export class UserComponent implements OnInit {
 
   users: any;
 
+  newUserName: string = '';
+
   constructor(private service: GroceryListService) { }
 
   ngOnInit(): void {
@@ -18,6 +20,14 @@ export class UserComponent implements OnInit {
         console.log(response);
         this.users = response;
       });
+  }
+
+  addUser() {
+    this.service.createUser(this.newUserName)
+    .subscribe((response: any) => {
+      console.log(response);
+      this.users.push(response);
+    });
   }
 
 }
