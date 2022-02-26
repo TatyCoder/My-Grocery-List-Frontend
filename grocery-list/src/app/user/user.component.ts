@@ -21,7 +21,6 @@ export class UserComponent implements OnInit {
   private getAllUsers() {
     this.service.getUsers()
       .subscribe(response => {
-        console.log(response);
         this.users = response;
       });
   }
@@ -29,7 +28,6 @@ export class UserComponent implements OnInit {
   addUser() {
     this.service.createUser(this.newUserName)
       .subscribe((response: any) => {
-        console.log(response);
         this.getAllUsers();
         this.newUserName = '';
       });
@@ -38,7 +36,6 @@ export class UserComponent implements OnInit {
   deleteUser(id: number) {
     this.service.deleteUser(id)
       .subscribe((response: any) => {
-        console.log(response);
         this.getAllUsers();
       });
   }
