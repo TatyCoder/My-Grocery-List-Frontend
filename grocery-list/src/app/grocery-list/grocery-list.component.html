@@ -2,8 +2,8 @@
   <div class="row">
     <ul class="list-group col-8" class="list-group col-4">
         <ng-container *ngFor="let groceryList of groceryLists">
-            <li class="list-group-item">{{groceryList.name}}  
-                <!-- <button (click)="deleteList(user.userId)" type="button" class="btn btn-secondary">Delete List</button> -->
+            <li class="list-group-item"><div>{{groceryList.name}}</div>
+                <button (click)="deleteGroceryList(groceryList.groceryListId)" type="button" class="btn btn-secondary">Delete Grocery List</button>
             </li>
           </ng-container>
 

@@ -19,17 +19,21 @@ export class GroceryListService {
     .post('/api/user', {name: name}); 
   }
 
-  deleteUser(id: number) {
-    return this.http.delete('/api/user/' + id);
+  deleteUser(userId: number) {
+    return this.http.delete('/api/user/' + userId);
   }
 
-  getGroceryListsForUser(id: number) {
+  getGroceryListsForUser(userId: number) {
     return this.http
-    .get('/api/user/' + id + '/groceryList'); 
+    .get('/api/user/' + userId + '/groceryList'); 
   }
 
-  createGroceryList(id: number, name: string) {
+  createGroceryList(userId: number, name: string) {
     return this.http
-    .post('/api/user/' + id + '/groceryList', {name: name}); 
+    .post('/api/user/' + userId + '/groceryList', {name: name}); 
+  }
+
+  deleteGroceryList(userId: number, groceryListId: number) {
+    return this.http.delete('/api/user/' + userId + '/groceryList/' + groceryListId);
   }
 }

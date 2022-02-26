@@ -19,13 +19,13 @@ export class GroceryListComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.getGroceryListsForUser(params['userId']);
       this.userId = params['userId'];
+      this.getGroceryListsForUser();
     })
   }
 
-  getGroceryListsForUser(id: number) {
-    this.service.getGroceryListsForUser(id)
+  getGroceryListsForUser() {
+    this.service.getGroceryListsForUser(this.userId)
       .subscribe(response => {
         console.log(response);
         this.groceryLists = response;
@@ -35,8 +35,15 @@ export class GroceryListComponent implements OnInit {
   addGroceryList() {
     this.service.createGroceryList(this.userId, this.newGroceryListName)
       .subscribe((response: any) => {
-        this.getGroceryListsForUser(this.userId);
+        this.getGroceryListsForUser();
         this.newGroceryListName = '';
+      });
+  }
+
+  deleteGroceryList(groceryListId: number) {
+    this.service.deleteGroceryList(this.userId, groceryListId)
+      .subscribe((response: any) => {
+        this.getGroceryListsForUser();
       });
   }
 
