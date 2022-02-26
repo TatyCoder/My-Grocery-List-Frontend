@@ -1,18 +1,19 @@
 <div class="container">
-    <h3>Existing users</h3>
+  <h3>Existing users</h3>
   <div class="row">
     <ul class="list-group col-4">
       <ng-container *ngFor="let user of users">
-        <li class="list-group-item"><div routerLink="/user/{{user.userId}}">{{user.name}}</div> 
-            <button (click)="deleteUser(user.userId)" type="button" class="btn btn-secondary">Delete User</button>
+        <li class="list-group-item">
+          <div routerLink="/user/{{user.userId}}">{{user.name}}</div>
+          <button (click)="deleteUser(user.userId)" type="button" class="btn btn-outline-info">Delete</button>
         </li>
       </ng-container>
     </ul>
   </div>
-  <div class="row"> 
-      <div class="list-group col-4">
-        <button (click)="addUser()" type="button" class="btn btn-primary">Add User</button>
-        <input type="text" name="newUser" id="newUser" [(ngModel)]="newUserName">
-      </div>
+  <div class="row">
+    <div class="list-group col-4">
+      <button (click)="addUser()" type="button" class="btn btn-primary">Add User</button>
+      <input type="text" name="newUser" id="newUser" [(ngModel)]="newUserName">
+    </div>
   </div>
 </div>
