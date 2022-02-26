@@ -3,7 +3,7 @@
   <div class="row">
     <ul class="list-group col-4">
       <ng-container *ngFor="let user of users">
-        <li routerLink="/user/{{user.userId}}" class="list-group-item">{{user.name}}  
+        <li class="list-group-item"><div routerLink="/user/{{user.userId}}">{{user.name}}</div> 
             <button (click)="deleteUser(user.userId)" type="button" class="btn btn-secondary">Delete User</button>
         </li>
       </ng-container>

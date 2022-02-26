@@ -33,8 +33,8 @@ export class UserComponent implements OnInit {
       });
   }
 
-  deleteUser(id: number) {
-    this.service.deleteUser(id)
+  deleteUser(userId: number) {
+    this.service.deleteUser(userId)
       .subscribe((response: any) => {
         this.getAllUsers();
       });
