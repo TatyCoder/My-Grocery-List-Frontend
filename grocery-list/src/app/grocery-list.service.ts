@@ -18,4 +18,8 @@ export class GroceryListService {
     return this.http
     .post('/api/user', {name: name}); 
   }
+
+  deleteUser(id: number) {
+    return this.http.delete('/api/user/' + id);
+  }
 }
