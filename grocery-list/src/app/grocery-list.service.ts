@@ -27,4 +27,9 @@ export class GroceryListService {
     return this.http
     .get('/api/user/' + id + '/groceryList'); 
   }
+
+  createGroceryList(id: number, name: string) {
+    return this.http
+    .post('/api/user/' + id + '/groceryList', {name: name}); 
+  }
 }
