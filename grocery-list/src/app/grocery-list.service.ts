@@ -51,4 +51,9 @@ export class GroceryListService {
     return this.http.delete('/api/user/' + userId + '/groceryList/' + groceryListId + '/item/' + itemId);
   }
 
+  getAllCategories() {
+    return this.http
+    .get('/api/category');
+  }
+
 }

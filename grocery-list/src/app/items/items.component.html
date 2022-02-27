@@ -4,7 +4,7 @@
       <ul class="list-group col-8" class="list-group col-4">
         <ng-container *ngFor="let item of groceryList.items">
           <li class="list-group-item">
-            <div>{{item.name}}</div>
+            <div>{{item.name}} {{item.description}} {{item.quantity}} {{item.category.name}}</div>
             <button (click)="deleteItem(item.itemId)" type="button" class="btn btn-outline-info">Delete</button>
           </li>
         </ng-container>
@@ -31,12 +31,14 @@
           Description: <input type="text" name="newItemDescription" id="newItemDescription"
             [(ngModel)]="newItemDescription">
           Quantity: <input type="text" name="newItemQuantity" id="newItemQuantity" [(ngModel)]="newItemQuantity">
-          Category: <input type="text" name="categoryId" id="categoryId" [(ngModel)]="categoryId">
+          Category: <select type="text" name="categoryId" id="categoryId" [(ngModel)]="categoryId">
+            <option *ngFor="let category of categories" value="{{category.categoryId}}">{{category.name}}</option>
+          </select>
           <p>{{message}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button (click)="addItem()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeModalButton">Close</button>
+          <button (click)="addItem($event)" type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>

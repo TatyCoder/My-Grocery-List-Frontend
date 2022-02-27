@@ -18,11 +18,13 @@ export class ItemsComponent implements OnInit {
 
   groceryList: any;
 
+  categories: any;
+
   newItemName: string = '';
 
   newItemDescription: string = '';
 
-  newItemQuantity: number = 0;
+  newItemQuantity: number = 1;
 
   message: string = '';
 
@@ -37,6 +39,8 @@ export class ItemsComponent implements OnInit {
       this.groceryListId = params['groceryListId'];
       this.getAGroceryListForUser();
     });
+
+    this.getAllCategories();
   }
 
   getAGroceryListForUser() {
@@ -46,11 +50,15 @@ export class ItemsComponent implements OnInit {
       });
   }
 
-  addItem() {
+  addItem(event:any) {
     if (this.newItemName === '') {
       this.message = 'Not valid. Please enter new item name to start.';
       return;
     }
+
+    // manually close modal after validation passed
+    document.getElementById('closeModalButton')!.click();
+
     this.message = '';
     this.service.createItem(this.userId, this.groceryListId, this.categoryId, this.newItemName, this.newItemDescription, this.newItemQuantity)
       .subscribe((response: any) => {
@@ -66,6 +74,13 @@ export class ItemsComponent implements OnInit {
     this.service.deleteItem(this.userId, this.groceryListId, itemId)
       .subscribe((response: any) => {
         this.getAGroceryListForUser();
+      });
+  }
+
+  getAllCategories() {
+    this.service.getAllCategories()
+      .subscribe(response => {
+        this.categories = response;
       });
   }
 
