@@ -68,8 +68,8 @@ export class ItemsComponent implements OnInit {
 
     this.message = '';
     this.service.createItem(this.userId, this.groceryListId, this.categoryId, this.newItemName, this.newItemDescription, this.newItemQuantity)
-      .subscribe(
-        (response: any) => {
+      .subscribe({
+        next: (response: any) => {
           this.getAGroceryListForUser();
           this.newItemName = '';
           this.newItemDescription = '';
@@ -79,9 +79,9 @@ export class ItemsComponent implements OnInit {
           // Manually close modal after validation passed:
           document.getElementById('closeModalButton')!.click();
         },
-        error => {
+        error: error => {
           this.message = error.error.message;
-        }
+        }}
       );
 
   }
