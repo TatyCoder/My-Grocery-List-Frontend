@@ -1,6 +1,8 @@
 {
     "/api": {
-      "target": "https://springishere.herokuapp.com",
+      // "target": "https://springishere.herokuapp.com",
+      "target": "http://localhost:9092",
+      "changeOrigin": true,
       "secure": false
     }
 }

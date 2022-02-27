@@ -1,25 +1,44 @@
-<div class="container">
+<div *ngIf="groceryList">
+  <div class="container">
     <div class="row">
       <ul class="list-group col-8" class="list-group col-4">
         <ng-container *ngFor="let item of groceryList.items">
           <li class="list-group-item">
             <div>{{item.name}}</div>
-            <button (click)="deleteItem(item.itemId)" type="button"
-              class="btn btn-outline-info">Delete</button>
+            <button (click)="deleteItem(item.itemId)" type="button" class="btn btn-outline-info">Delete</button>
           </li>
         </ng-container>
-  
+
       </ul>
     </div>
     <div class="row">
       <div class="list-group col-4">
-        <button (click)="addItem()" type="button" class="btn btn-primary">Add Item</button>
-        Name: <input type="text" name="newItemName" id="newItemName" [(ngModel)]="newItemName">
-        Description: <input type="text" name="newItemDescription" id="newItemDescription" [(ngModel)]="newItemDescription">
-        Quantity: <input type="text" name="newItemQuantity" id="newItemQuantity" [(ngModel)]="newItemQuantity">
-        Category: <input type="text" name="categoryId" id="categoryId" [(ngModel)]="categoryId">
-        <p>{{message}}</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addItemModal">Add
+          Item</button>
       </div>
     </div>
   </div>
-  
+
+  <div class="modal" id="addItemModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Item To Your Grocery List {{groceryList.name}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Name: <input type="text" name="newItemName" id="newItemName" [(ngModel)]="newItemName">
+          Description: <input type="text" name="newItemDescription" id="newItemDescription"
+            [(ngModel)]="newItemDescription">
+          Quantity: <input type="text" name="newItemQuantity" id="newItemQuantity" [(ngModel)]="newItemQuantity">
+          Category: <input type="text" name="categoryId" id="categoryId" [(ngModel)]="categoryId">
+          <p>{{message}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button (click)="addItem()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
