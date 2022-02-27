@@ -62,5 +62,11 @@ export class ItemsComponent implements OnInit {
       });
   }
 
+  deleteItem(itemId: number) {
+    this.service.deleteItem(this.userId, this.groceryListId, itemId)
+      .subscribe((response: any) => {
+        this.getAGroceryListForUser();
+      });
+  }
 
 }

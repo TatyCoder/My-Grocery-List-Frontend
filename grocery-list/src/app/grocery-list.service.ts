@@ -47,4 +47,8 @@ export class GroceryListService {
     .post('/api/user/' + userId + '/groceryList/' + groceryListId + '/category/' + categoryId, {name: name, description: description, quantity: quantity}); 
   }
 
+  deleteItem(userId: number, groceryListId: number, itemId: number) {
+    return this.http.delete('/api/user/' + userId + '/groceryList/' + groceryListId + '/item/' + itemId);
+  }
+
 }

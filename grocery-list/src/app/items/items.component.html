@@ -4,8 +4,8 @@
         <ng-container *ngFor="let item of groceryList.items">
           <li class="list-group-item">
             <div>{{item.name}}</div>
-            <!-- <button (click)="deleteItem()" type="button" -->
-              <!-- class="btn btn-outline-info">Delete</button> -->
+            <button (click)="deleteItem(item.itemId)" type="button"
+              class="btn btn-outline-info">Delete</button>
           </li>
         </ng-container>
   
