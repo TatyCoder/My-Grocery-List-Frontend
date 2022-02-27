@@ -42,4 +42,9 @@ export class GroceryListService {
     .get('/api/user/' + userId + '/groceryList/' + groceryListId); 
   }
 
+  createItem(userId: number, groceryListId: number, categoryId: number, name: string, description: string, quantity: number) {
+    return this.http
+    .post('/api/user/' + userId + '/groceryList/' + groceryListId + '/category/' + categoryId, {name: name, description: description, quantity: quantity}); 
+  }
+
 }

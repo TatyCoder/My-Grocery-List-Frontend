@@ -4,8 +4,8 @@
         <ng-container *ngFor="let item of groceryList.items">
           <li class="list-group-item">
             <div>{{item.name}}</div>
-            <!-- <button (click)="deleteGroceryList(groceryList.groceryListId)" type="button"
-              class="btn btn-outline-info">Delete</button> -->
+            <!-- <button (click)="deleteItem()" type="button" -->
+              <!-- class="btn btn-outline-info">Delete</button> -->
           </li>
         </ng-container>
   
@@ -13,8 +13,12 @@
     </div>
     <div class="row">
       <div class="list-group col-4">
-        <!-- <button (click)="addGroceryList()" type="button" class="btn btn-primary">Add Grocery List</button>
-        <input type="text" name="newGroceryList" id="newGroceryList" [(ngModel)]="newGroceryListName"> -->
+        <button (click)="addItem()" type="button" class="btn btn-primary">Add Item</button>
+        Name: <input type="text" name="newItemName" id="newItemName" [(ngModel)]="newItemName">
+        Description: <input type="text" name="newItemDescription" id="newItemDescription" [(ngModel)]="newItemDescription">
+        Quantity: <input type="text" name="newItemQuantity" id="newItemQuantity" [(ngModel)]="newItemQuantity">
+        Category: <input type="text" name="categoryId" id="categoryId" [(ngModel)]="categoryId">
+        <p>{{message}}</p>
       </div>
     </div>
   </div>

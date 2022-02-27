@@ -14,8 +14,17 @@ export class ItemsComponent implements OnInit {
 
   groceryListId: number = 0;
 
+  categoryId: number = 0;
+
   groceryList: any;
-  
+
+  newItemName: string = '';
+
+  newItemDescription: string = '';
+
+  newItemQuantity: number = 0;
+
+  message: string = '';
 
   constructor(private service: GroceryListService, private route: ActivatedRoute) { }
 
@@ -33,9 +42,25 @@ export class ItemsComponent implements OnInit {
   getAGroceryListForUser() {
     this.service.getAGroceryListForUser(this.userId, this.groceryListId)
       .subscribe(response => {
-        console.log(response);
         this.groceryList = response;
       });
   }
+
+  addItem() {
+    if (this.newItemName === '') {
+      this.message = 'Not valid. Please enter new item name to start.';
+      return;
+    }
+    this.message = '';
+    this.service.createItem(this.userId, this.groceryListId, this.categoryId, this.newItemName, this.newItemDescription, this.newItemQuantity)
+      .subscribe((response: any) => {
+        this.getAGroceryListForUser();
+        this.newItemName = '';
+        this.newItemDescription = '';
+        this.newItemQuantity = 0;
+        this.categoryId = 0;
+      });
+  }
+
 
 }
