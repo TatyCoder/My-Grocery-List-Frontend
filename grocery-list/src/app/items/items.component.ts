@@ -47,37 +47,43 @@ export class ItemsComponent implements OnInit {
     this.service.getAGroceryListForUser(this.userId, this.groceryListId)
       .subscribe(response => {
         this.groceryList = response;
-        this.groceryList.items.sort((a: any, b:any) => {
+        this.groceryList.items.sort((a: any, b: any) => {
           if (a.category.name < b.category.name) {
             return -1;
           }
           if (a.category.name > b.category.name) {
             return 1;
           }
-          // names must be equal
+          // When category names are equal:
           return 0;
         })
       });
   }
 
-  addItem(event:any) {
+  addItem(event: any) {
     if (this.newItemName === '') {
       this.message = 'Not valid. Please enter new item name to start.';
       return;
     }
 
-    // manually close modal after validation passed
-    document.getElementById('closeModalButton')!.click();
-
     this.message = '';
     this.service.createItem(this.userId, this.groceryListId, this.categoryId, this.newItemName, this.newItemDescription, this.newItemQuantity)
-      .subscribe((response: any) => {
-        this.getAGroceryListForUser();
-        this.newItemName = '';
-        this.newItemDescription = '';
-        this.newItemQuantity = 0;
-        this.categoryId = 0;
-      });
+      .subscribe(
+        (response: any) => {
+          this.getAGroceryListForUser();
+          this.newItemName = '';
+          this.newItemDescription = '';
+          this.newItemQuantity = 0;
+          this.categoryId = 0;
+
+          // Manually close modal after validation passed:
+          document.getElementById('closeModalButton')!.click();
+        },
+        error => {
+          this.message = error.error.message;
+        }
+      );
+
   }
 
   deleteItem(itemId: number) {
