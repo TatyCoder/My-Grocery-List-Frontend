@@ -13,6 +13,8 @@ export class UserComponent implements OnInit {
 
   newUserName: string = '';
 
+  message: string = '';
+
   constructor(private service: GroceryListService) { }
 
   ngOnInit(): void {
@@ -27,6 +29,11 @@ export class UserComponent implements OnInit {
   }
 
   addUser() {
+    if (this.newUserName === '') {
+      this.message = 'Not valid. Please enter a user name.';
+      return;
+    }
+    this.message = '';
     this.service.createUser(this.newUserName)
       .subscribe((response: any) => {
         this.getAllUsers();

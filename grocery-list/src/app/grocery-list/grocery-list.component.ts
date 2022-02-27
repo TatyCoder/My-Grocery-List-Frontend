@@ -16,6 +16,8 @@ export class GroceryListComponent implements OnInit {
 
   newGroceryListName: string = '';
 
+  message: string = '';
+
   constructor(private service: GroceryListService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -33,6 +35,11 @@ export class GroceryListComponent implements OnInit {
   }
 
   addGroceryList() {
+    if (this.newGroceryListName === '') {
+      this.message = 'Not valid. Please enter a grocery list name.';
+      return;
+    }
+    this.message = '';
     this.service.createGroceryList(this.userId, this.newGroceryListName)
       .subscribe((response: any) => {
         this.getGroceryListsForUser();
