@@ -3,7 +3,7 @@
     <div class="row">
       <ul class="list-group col-8" class="list-group col-4">
         <ng-container *ngFor="let item of groceryList.items">
-          <li class="list-group-item">
+          <li class="list-group-item d-flex justify-content-between">
             <div>{{item.name}} {{item.description}} {{item.quantity}} {{item.category.name}}</div>
             <button (click)="deleteItem(item.itemId)" type="button" class="btn btn-outline-info">Delete</button>
           </li>

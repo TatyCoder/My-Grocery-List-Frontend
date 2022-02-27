@@ -2,7 +2,7 @@
   <div class="row">
     <ul class="list-group col-8" class="list-group col-4">
       <ng-container *ngFor="let groceryList of groceryLists">
-        <li class="list-group-item">
+        <li class="list-group-item d-flex justify-content-between">
           <div routerLink="/user/{{userId}}/groceryList/{{groceryList.groceryListId}}">{{groceryList.name}}</div>
           <button (click)="deleteGroceryList(groceryList.groceryListId)" type="button"
             class="btn btn-outline-info">Delete</button>

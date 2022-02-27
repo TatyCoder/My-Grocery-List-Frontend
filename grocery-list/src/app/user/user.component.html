@@ -3,7 +3,7 @@
   <div class="row">
     <ul class="list-group col-4">
       <ng-container *ngFor="let user of users">
-        <li class="list-group-item">
+        <li class="list-group-item d-flex justify-content-between">
           <div routerLink="/user/{{user.userId}}">{{user.name}}</div>
           <button (click)="deleteUser(user.userId)" type="button" class="btn btn-outline-info">Delete</button>
         </li>
@@ -13,7 +13,7 @@
   <div class="row">
     <div class="list-group col-4">
       <button (click)="addUser()" type="button" class="btn btn-primary">Add User</button>
-      <input type="text" name="newUser" id="newUser" placeholder="Name" [(ngModel)]="newUserName">
+      <input type="text" name="newUser" id="newUser" placeholder="Name"[(ngModel)]="newUserName">
       <p>{{message}}</p>
     </div>
   </div>
