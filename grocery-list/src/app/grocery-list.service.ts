@@ -36,4 +36,10 @@ export class GroceryListService {
   deleteGroceryList(userId: number, groceryListId: number) {
     return this.http.delete('/api/user/' + userId + '/groceryList/' + groceryListId);
   }
+
+  getAGroceryListForUser(userId: number, groceryListId: number) {
+    return this.http
+    .get('/api/user/' + userId + '/groceryList/' + groceryListId); 
+  }
+
 }

@@ -7,6 +7,7 @@ import { GroceryListService } from '../grocery-list.service';
   templateUrl: './grocery-list.component.html',
   styleUrls: ['./grocery-list.component.css']
 })
+
 export class GroceryListComponent implements OnInit {
 
   userId: number = 0;
@@ -27,7 +28,6 @@ export class GroceryListComponent implements OnInit {
   getGroceryListsForUser() {
     this.service.getGroceryListsForUser(this.userId)
       .subscribe(response => {
-        console.log(response);
         this.groceryLists = response;
       });
   }

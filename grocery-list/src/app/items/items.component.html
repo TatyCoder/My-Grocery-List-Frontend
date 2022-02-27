@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+      <ul class="list-group col-8" class="list-group col-4">
+        <ng-container *ngFor="let item of groceryList.items">
+          <li class="list-group-item">
+            <div>{{item.name}}</div>
+            <!-- <button (click)="deleteGroceryList(groceryList.groceryListId)" type="button"
+              class="btn btn-outline-info">Delete</button> -->
+          </li>
+        </ng-container>
+  
+      </ul>
+    </div>
+    <div class="row">
+      <div class="list-group col-4">
+        <!-- <button (click)="addGroceryList()" type="button" class="btn btn-primary">Add Grocery List</button>
+        <input type="text" name="newGroceryList" id="newGroceryList" [(ngModel)]="newGroceryListName"> -->
+      </div>
+    </div>
+  </div>
+  

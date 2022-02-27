@@ -6,6 +6,7 @@ import { GroceryListService } from '../grocery-list.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
+
 export class UserComponent implements OnInit {
 
   users: any;
