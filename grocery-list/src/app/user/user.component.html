@@ -1,20 +1,25 @@
-<div class="container">
-  <h3>Existing users</h3>
-  <div class="row">
+<div class="container text-center">
+  <h4>Existing users</h4>
+
+  <div class="row d-flex justify-content-center">
+
     <ul class="list-group col-4">
+      <!-- List of users -->
       <ng-container *ngFor="let user of users">
         <li class="list-group-item d-flex justify-content-between">
           <div routerLink="/user/{{user.userId}}">{{user.name}}</div>
           <button (click)="deleteUser(user.userId)" type="button" class="btn btn-outline-info">Delete</button>
         </li>
       </ng-container>
+
+      <!-- Add user button -->
+      <li class="d-flex justify-content-center mt-3">
+        <input type="text" name="newUser" id="newUser" placeholder="Name" [(ngModel)]="newUserName">
+        <button (click)="addUser()" type="button" class="btn btn-primary ms-3">Add User</button>
+      </li>
+      <li class="d-flex justify-content-center">{{message}}</li>
     </ul>
+
   </div>
-  <div class="row">
-    <div class="list-group col-4">
-      <button (click)="addUser()" type="button" class="btn btn-primary">Add User</button>
-      <input type="text" name="newUser" id="newUser" placeholder="Name"[(ngModel)]="newUserName">
-      <p>{{message}}</p>
-    </div>
-  </div>
+
 </div>

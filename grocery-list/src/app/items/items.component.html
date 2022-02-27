@@ -1,7 +1,7 @@
 <div *ngIf="groceryList">
   <div class="container">
     <div class="row">
-      <ul class="list-group col-8" class="list-group col-4">
+      <ul class="list-group col-6">
         <ng-container *ngFor="let item of groceryList.items">
           <li class="list-group-item d-flex justify-content-between">
             <div>{{item.name}} {{item.description}} {{item.quantity}} {{item.category.name}}</div>
@@ -11,14 +11,15 @@
 
       </ul>
     </div>
-    <div class="row">
-      <div class="list-group col-4">
+    <div class="row mt-3">
+      <div class="list-group col-6">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addItemModal">Add
           Item</button>
       </div>
     </div>
   </div>
 
+  <!-- Modal pop up -->
   <div class="modal" id="addItemModal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
