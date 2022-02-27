@@ -47,6 +47,16 @@ export class ItemsComponent implements OnInit {
     this.service.getAGroceryListForUser(this.userId, this.groceryListId)
       .subscribe(response => {
         this.groceryList = response;
+        this.groceryList.items.sort((a: any, b:any) => {
+          if (a.category.name < b.category.name) {
+            return -1;
+          }
+          if (a.category.name > b.category.name) {
+            return 1;
+          }
+          // names must be equal
+          return 0;
+        })
       });
   }
 
