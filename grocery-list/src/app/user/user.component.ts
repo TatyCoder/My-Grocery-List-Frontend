@@ -11,6 +11,8 @@ export class UserComponent implements OnInit {
 
   users: any;
 
+  userIdToDelete: number = 0;
+
   newUserName: string = '';
 
   message: string = '';
@@ -41,11 +43,22 @@ export class UserComponent implements OnInit {
       });
   }
 
-  deleteUser(userId: number) {
-    this.service.deleteUser(userId)
+  deleteUser() {
+    this.service.deleteUser(this.userIdToDelete)
       .subscribe((response: any) => {
         this.getAllUsers();
+        // Manually close modal after validation passed:
+        document.getElementById('closeModalButton')!.click();
       });
+  }
+
+  showModal(userId: number) {
+    // https://stackoverflow.com/questions/62827002/bootstrap-v5-manually-call-a-modal-mymodal-show-not-working-vanilla-javascrip
+    const deleteUser = document.getElementById('deleteUser');
+    const bsModal = (window as any).bootstrap.Modal;
+    const modal = bsModal.getOrCreateInstance(deleteUser);
+    this.userIdToDelete = userId;
+    modal.show();
   }
 
 }
