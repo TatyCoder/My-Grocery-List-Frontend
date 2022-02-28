@@ -14,6 +14,8 @@ export class GroceryListComponent implements OnInit {
 
   groceryLists: any;
 
+  groceryListIdToDelete: number = 0;
+
   newGroceryListName: string = '';
 
   message: string = '';
@@ -47,11 +49,21 @@ export class GroceryListComponent implements OnInit {
       });
   }
 
-  deleteGroceryList(groceryListId: number) {
-    this.service.deleteGroceryList(this.userId, groceryListId)
+  deleteGroceryList() {
+    this.service.deleteGroceryList(this.userId, this.groceryListIdToDelete)
       .subscribe((response: any) => {
         this.getGroceryListsForUser();
+        // Manually close modal after validation passed:
+        document.getElementById('closeModalButton')!.click();
       });
+  }
+
+  showModal(groceryListId: number) {
+    const deleteGroceryList = document.getElementById('deleteGroceryList');
+    const bsModal = (window as any).bootstrap.Modal;
+    const modal = bsModal.getOrCreateInstance(deleteGroceryList);
+    this.groceryListIdToDelete = groceryListId;
+    modal.show();
   }
 
 }
