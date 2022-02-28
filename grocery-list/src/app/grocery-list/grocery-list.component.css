@@ -1,3 +1,19 @@
 .message {
-    color: rgb(231, 80, 25);
+  color: #e75019;
+}
+
+a:link,
+a:visited {
+  background-color: #b8a0e3;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+a:hover,
+a:active {
+  background-color: #9278c2;
 }

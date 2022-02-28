@@ -73,7 +73,7 @@ export class ItemsComponent implements OnInit {
           this.getAGroceryListForUser();
           this.newItemName = '';
           this.newItemDescription = '';
-          this.newItemQuantity = 0;
+          this.newItemQuantity = 1;
           this.categoryId = 0;
 
           // Manually close modal after validation passed:
