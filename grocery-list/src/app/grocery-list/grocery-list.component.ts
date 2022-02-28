@@ -43,10 +43,16 @@ export class GroceryListComponent implements OnInit {
     }
     this.message = '';
     this.service.createGroceryList(this.userId, this.newGroceryListName)
-      .subscribe((response: any) => {
-        this.getGroceryListsForUser();
-        this.newGroceryListName = '';
-      });
+      .subscribe({
+        next: (response: any) => {
+          this.getGroceryListsForUser();
+          this.newGroceryListName = '';
+        },
+        error: error => {
+          this.message = error.error.message;
+        }
+      }
+      );
   }
 
   deleteGroceryList() {

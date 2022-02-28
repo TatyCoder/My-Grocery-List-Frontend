@@ -37,10 +37,16 @@ export class UserComponent implements OnInit {
     }
     this.message = '';
     this.service.createUser(this.newUserName)
-      .subscribe((response: any) => {
-        this.getAllUsers();
-        this.newUserName = '';
-      });
+      .subscribe({
+        next: (response: any) => {
+          this.getAllUsers();
+          this.newUserName = '';
+        },
+        error: error => {
+          this.message = error.error.message;
+        }
+      }
+      );
   }
 
   deleteUser() {
