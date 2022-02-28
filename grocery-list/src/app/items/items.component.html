@@ -1,11 +1,24 @@
 <div *ngIf="groceryList">
-  <div class="container">
+    <div class="container">
+        <h3>Items for {{groceryList.name}}</h3>
+        
     <div class="row">
-      <ul class="list-group col-6">
+      <ul class="list-group col">
+        <li class="list-group-item d-flex justify-content-between row bg-light">
+          <div class="col-4">Name</div>
+          <div class="col-2">Description</div>
+          <div class="col-2">Quantity</div>
+          <div class="col-2">Category</div>
+          <div class="col-2"></div>
+        </li>
+
         <ng-container *ngFor="let item of groceryList.items">
-          <li class="list-group-item d-flex justify-content-between">
-            <div>{{item.name}} {{item.description}} {{item.quantity}} {{item.category.name}}</div>
-            <button (click)="deleteItem(item.itemId)" type="button" class="btn btn-outline-info">Delete</button>
+          <li class="list-group-item d-flex justify-content-between row">
+            <div class="col-4">{{item.name}} </div>
+            <div class="col-2">{{item.description}} </div>
+            <div class="col-2">{{item.quantity}}</div>
+            <div class="col-2"> {{item.category.name}}</div>
+            <button (click)="deleteItem(item.itemId)" type="button" class="btn btn-outline-info col-2">Delete</button>
           </li>
         </ng-container>
 
@@ -28,13 +41,47 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Name: <input type="text" name="newItemName" id="newItemName" [(ngModel)]="newItemName">
-          Description: <input type="text" name="newItemDescription" id="newItemDescription"
-            [(ngModel)]="newItemDescription">
-          Quantity: <input type="text" name="newItemQuantity" id="newItemQuantity" [(ngModel)]="newItemQuantity">
-          Category: <select type="text" name="categoryId" id="categoryId" [(ngModel)]="categoryId">
-            <option *ngFor="let category of categories" value="{{category.categoryId}}">{{category.name}}</option>
-          </select>
+          <div class="row">
+            <div class="col-3 pt-2">
+              Name:
+            </div>
+            <div class="col-9">
+              <input type="text" name="newItemName" id="newItemName" class="form-control" [(ngModel)]="newItemName">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-3 pt-2">
+              Description:
+            </div>
+            <div class="col-9">
+              <input type="text" name="newItemDescription" id="newItemDescription" class="form-control"
+                [(ngModel)]="newItemDescription">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-3 pt-2">
+              Quantity:
+            </div>
+            <div class="col-9">
+              <input type="text" name="newItemQuantity" id="newItemQuantity" class="form-control"
+                [(ngModel)]="newItemQuantity">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-3 pt-2">
+              Category:
+            </div>
+            <div class="col-9">
+              <select type="text" name="categoryId" id="categoryId" class="form-select" [(ngModel)]="categoryId">
+                <option *ngFor="let category of categories" value="{{category.categoryId}}">{{category.name}}</option>
+              </select>
+            </div>
+          </div>
+
+
           <p>{{message}}</p>
         </div>
         <div class="modal-footer">

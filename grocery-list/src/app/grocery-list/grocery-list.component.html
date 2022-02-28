@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center mt-5">
   <div class="row d-flex justify-content-center">
     <ul class="list-group col-4">
       <ng-container *ngFor="let groceryList of groceryLists">
@@ -10,7 +10,7 @@
       </ng-container>
 
       <li class="d-flex justify-content-center mt-3">
-        <input type="text" name="newGroceryList" id="newGroceryList" placeholder="Name"
+        <input type="text" name="newGroceryList" id="newGroceryList" placeholder="Grocery List Name"
           [(ngModel)]="newGroceryListName">
         <button (click)="addGroceryList()" type="button" class="btn btn-primary ms-3">Add Grocery List</button>
       </li>
