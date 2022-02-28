@@ -3,14 +3,14 @@
     <ul class="list-group col-4">
       <ng-container *ngFor="let groceryList of groceryLists">
         <li class="list-group-item d-flex justify-content-between">
-          <div routerLink="/user/{{userId}}/groceryList/{{groceryList.groceryListId}}">{{groceryList.name}}</div>
+          <div class="hilite" routerLink="/user/{{userId}}/groceryList/{{groceryList.groceryListId}}">{{groceryList.name}}</div>
           <button (click)="deleteGroceryList(groceryList.groceryListId)" type="button"
             class="btn btn-outline-info">Delete</button>
         </li>
       </ng-container>
 
       <li class="d-flex justify-content-center mt-3">
-        <input type="text" name="newGroceryList" id="newGroceryList" placeholder="Grocery List Name"
+        <input type="text" name="newGroceryList" id="newGroceryList" placeholder="New Grocery List Name"
           [(ngModel)]="newGroceryListName">
         <button (click)="addGroceryList()" type="button" class="btn btn-primary ms-3">Add Grocery List</button>
       </li>
