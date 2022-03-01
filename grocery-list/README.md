@@ -1,9 +1,9 @@
 # My-Grocery-List-Backend
 
-## Purpose of this application
+# Purpose of this application
 This application is designed to manage grocery lists. The user should be able to create new lists and manage those lists by adding or deleting items according to purchases needs. The user should be able to view a full list of groceries and categorized each item for better list organization.
 
-## My Grocery List App User Stories
+# My Grocery List App User Stories
 
 As a person I want to be able to manage my grocery purchases using an application
 * Given that I want to use an application to manage my groceries
@@ -43,8 +43,9 @@ As a user I want to be able to delete a grocery list no longer wanted.
 As a user I want to be able to keep as many grocery lists as I want.
 
 
-## Entity Relationship Diagram (ERD)
+# Entity Relationship Diagram (ERD)
+![alt](GLERD.jpg "ERD")
 
-## Wireframe
+# Wireframe
 
-## Problems encountered
+# Problems encountered
