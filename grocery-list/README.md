@@ -1,27 +1,50 @@
-# GroceryList
+# My-Grocery-List-Backend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+## Purpose of this application
+This application is designed to manage grocery lists. The user should be able to create new lists and manage those lists by adding or deleting items according to purchases needs. The user should be able to view a full list of groceries and categorized each item for better list organization.
 
-## Development server
+## My Grocery List App User Stories
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+As a person I want to be able to manage my grocery purchases using an application
+* Given that I want to use an application to manage my groceries
+* When I start the application it will ask me for a user name
+* Then my name will be recorded in the database as a new user
 
-## Code scaffolding
+As a user I want to be able to create a new grocery list.
+* Given that I want to create a grocery list
+* When I type the new grocery list and send the request to the server
+* Then the grocery list is saved in the database and I will see it on my device
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+As a user I want to be able to create a new item on my grocery list.
+* Given that I have an existing grocery list and that I want to create a new item
+* When I type the new item on my grocery list and send the request to the server
+* Then the item is saved in the database and I will see it on my grocery list
 
-## Build
+As a user I want to be able to organize items by category on my grocery list.
+* Given that I have an existing grocery list and while creating an item
+* When I select a category for that item on my grocery list and send the request to the server
+* Then the item is saved in the selected category and I will see it on my grocery list
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+As a user I want to be able to delete an item already purchased.
+* Given that I have an existing grocery list
+* When I want to delete an item on my grocery list and send the request to the server
+* Then the deleted item is removed from the database and I will not see it on my grocery list anymore
 
-## Running unit tests
+As a user I want to be able to see all of my grocery list information.
+* Given that I have an existing grocery list
+* When I request the grocery list from the server
+* Then all the items in the grocery list will be display
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+As a user I want to be able to delete a grocery list no longer wanted.
+* Given that I have an existing grocery list
+* When I want to delete that grocery list and send the request to the server
+* Then the deleted grocery list is removed from the database and I will not see it on my device anymore
 
-## Running end-to-end tests
+As a user I want to be able to keep as many grocery lists as I want.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Entity Relationship Diagram (ERD)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Wireframe
+
+## Problems encountered
