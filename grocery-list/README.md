@@ -49,6 +49,11 @@ As a user I want to be able to keep as many grocery lists as I want.
 # Wireframe
 ![alt](planning/GLFinalWireframe.png "Final Wireframe")
 
+## App Gallery
+![alt](/src/assets/images/App1.png "App1")
+![alt](/src/assets/images/App2.png "App2")
+![alt](/src/assets/images/App3.png "App3")
+
 # Problems encountered
 As soon as I tried to connect the frontend with the backend of this project I encountered a CORS error which I solved by creating a proxy. Solution found here: https://angular.io/guide/build#proxying-to-a-backend-server
 
