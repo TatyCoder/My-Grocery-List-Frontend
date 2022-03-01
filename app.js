@@ -4,7 +4,7 @@ const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
-app.use(express.static('dist'));
+app.use(express.static('grocery-list/dist/grocery-list'));
 
 app.use("/", createProxyMiddleware(
     ["/api"],
