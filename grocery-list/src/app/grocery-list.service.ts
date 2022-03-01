@@ -11,12 +11,17 @@ export class GroceryListService {
 
   getUsers() {
     return this.http
-    .get('/api/user'); 
+      .get('/api/user');
+  }
+
+  getUser(userId: number) {
+    return this.http
+      .get('/api/user/' + userId);
   }
 
   createUser(name: string) {
     return this.http
-    .post('/api/user', {name: name}); 
+      .post('/api/user', { name: name });
   }
 
   deleteUser(userId: number) {
@@ -25,12 +30,12 @@ export class GroceryListService {
 
   getGroceryListsForUser(userId: number) {
     return this.http
-    .get('/api/user/' + userId + '/groceryList'); 
+      .get('/api/user/' + userId + '/groceryList');
   }
 
   createGroceryList(userId: number, name: string) {
     return this.http
-    .post('/api/user/' + userId + '/groceryList', {name: name}); 
+      .post('/api/user/' + userId + '/groceryList', { name: name });
   }
 
   deleteGroceryList(userId: number, groceryListId: number) {
@@ -39,12 +44,12 @@ export class GroceryListService {
 
   getAGroceryListForUser(userId: number, groceryListId: number) {
     return this.http
-    .get('/api/user/' + userId + '/groceryList/' + groceryListId); 
+      .get('/api/user/' + userId + '/groceryList/' + groceryListId);
   }
 
   createItem(userId: number, groceryListId: number, categoryId: number, name: string, description: string, quantity: number) {
     return this.http
-    .post('/api/user/' + userId + '/groceryList/' + groceryListId + '/category/' + categoryId, {name: name, description: description, quantity: quantity}); 
+      .post('/api/user/' + userId + '/groceryList/' + groceryListId + '/category/' + categoryId, { name: name, description: description, quantity: quantity });
   }
 
   deleteItem(userId: number, groceryListId: number, itemId: number) {
@@ -53,7 +58,7 @@ export class GroceryListService {
 
   getAllCategories() {
     return this.http
-    .get('/api/category');
+      .get('/api/category');
   }
 
 }

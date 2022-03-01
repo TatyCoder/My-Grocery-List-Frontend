@@ -1,8 +1,11 @@
 <div class="container text-center mt-5">
   <div class="row d-flex justify-content-center">
     <ul class="list-group col-4">
-      <li class="d-flex justify-content-center"><a href="/">Go Back To Users</a>
+      <li class="d-flex justify-content-center">
+        <!-- <h3>{{userName}}'s Lists</h3>  -->
+        <a href="/">Go Back To Users</a>
       </li>
+      
       <!-- List of grocery lists and delete button next to each one -->
       <ng-container *ngFor="let groceryList of groceryLists">
         <li class="list-group-item d-flex justify-content-between">

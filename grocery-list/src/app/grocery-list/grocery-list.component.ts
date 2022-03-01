@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GroceryListService } from '../grocery-list.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { GroceryListService } from '../grocery-list.service';
 export class GroceryListComponent implements OnInit {
 
   userId: number = 0;
+  userName: string = '';
 
   groceryLists: any;
 
@@ -20,13 +21,18 @@ export class GroceryListComponent implements OnInit {
 
   message: string = '';
 
-  constructor(private service: GroceryListService, private route: ActivatedRoute) { }
+  constructor(private service: GroceryListService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.userId = params['userId'];
       this.getGroceryListsForUser();
-    })
+    });
+
+    this.service.getUser(this.userId)
+      .subscribe(response => {
+        this.userName = (response as any).name;
+      });
   }
 
   getGroceryListsForUser() {
@@ -60,7 +66,13 @@ export class GroceryListComponent implements OnInit {
       .subscribe((response: any) => {
         this.getGroceryListsForUser();
         // Manually close modal after validation passed:
-        document.getElementById('closeModalButton')!.click();
+        //document.getElementById('closeModalButton')!.click();
+        const deleteGroceryList = document.getElementById('deleteGroceryList');
+        const bsModal = (window as any).bootstrap.Modal;
+        const modal = bsModal.getOrCreateInstance(deleteGroceryList);
+        modal.hide();
+        // https://www.pluralsight.com/guides/navigating-to-routes-from-code-in-angular
+        this.router.navigateByUrl(`/user/${this.userId}`)
       });
   }
 
