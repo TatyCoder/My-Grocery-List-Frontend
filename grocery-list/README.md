@@ -1,6 +1,8 @@
 # My-Grocery-List-Frontend
 
-![alt](src/assets/images/shopping.jpeg "App1")
+<p align="center">
+<img src=src/assets/images/shopping.jpeg>
+</p>
 
 # Purpose of this application
 This application is designed to manage grocery lists. The user should be able to create new lists and manage those lists by adding or deleting items according to purchases needs. The user should be able to view a full list of groceries and categorized each item for better list organization.
@@ -47,7 +49,7 @@ As a user I want to be able to keep as many grocery lists as I want.
 # Wireframe
 ![alt](planning/GLFinalWireframe.png "Final Wireframe")
 
-### System Tools Used
+## System Tools Used
 - Angular
 - Visual Code
 - Bootstrap
