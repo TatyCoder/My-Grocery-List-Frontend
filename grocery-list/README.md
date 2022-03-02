@@ -56,6 +56,8 @@ As a user I want to be able to keep as many grocery lists as I want.
 - Visual Code
 - Bootstrap
 - Lucidchart
+- Heroku
+- Express 
 
 # App Gallery
 ![alt](src/assets/images/App1.png "App1")
