@@ -42,10 +42,6 @@ As a user I want to be able to delete a grocery list no longer wanted.
 
 As a user I want to be able to keep as many grocery lists as I want.
 
-
-# Entity Relationship Diagram (ERD)
-![alt](planning/GLERD.png "ERD")
-
 # Wireframe
 ![alt](planning/GLFinalWireframe.png "Final Wireframe")
 
