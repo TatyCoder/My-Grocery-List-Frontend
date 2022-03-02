@@ -1,6 +1,6 @@
-<p align="center">
-    <h1>My-Grocery-List-Frontend</h1>
-</p>
+<h1 align="center">
+    My-Grocery-List-Frontend
+</h1>
 
 <p align="center">
     <img src=src/assets/images/shopping.jpeg>
