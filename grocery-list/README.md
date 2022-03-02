@@ -1,5 +1,5 @@
 <p align="center">
-    # My-Grocery-List-Frontend
+    <h1>My-Grocery-List-Frontend</h1>
 </p>
 
 <p align="center">
