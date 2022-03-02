@@ -1,7 +1,9 @@
-# My-Grocery-List-Frontend
+<p align="center">
+    # My-Grocery-List-Frontend
+</p>
 
 <p align="center">
-<img src=src/assets/images/shopping.jpeg>
+    <img src=src/assets/images/shopping.jpeg>
 </p>
 
 # Purpose of this application
@@ -49,7 +51,7 @@ As a user I want to be able to keep as many grocery lists as I want.
 # Wireframe
 ![alt](planning/GLFinalWireframe.png "Final Wireframe")
 
-## System Tools Used
+# System Tools Used
 - Angular
 - Visual Code
 - Bootstrap
