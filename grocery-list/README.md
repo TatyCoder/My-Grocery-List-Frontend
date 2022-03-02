@@ -1,9 +1,11 @@
 # My-Grocery-List-Frontend
 
+![alt](src/assets/images/shopping.jpeg "App1")
+
 # Purpose of this application
 This application is designed to manage grocery lists. The user should be able to create new lists and manage those lists by adding or deleting items according to purchases needs. The user should be able to view a full list of groceries and categorized each item for better list organization.
 
-# My Grocery List App User Stories
+# User Stories
 
 As a person I want to be able to manage my grocery purchases using an application
 - Given that I want to use an application to manage my groceries
@@ -45,6 +47,12 @@ As a user I want to be able to keep as many grocery lists as I want.
 # Wireframe
 ![alt](planning/GLFinalWireframe.png "Final Wireframe")
 
+### System Tools Used
+- Angular
+- Visual Code
+- Bootstrap
+- Lucidchart
+
 # App Gallery
 ![alt](src/assets/images/App1.png "App1")
 ![alt](src/assets/images/App2.png "App2")
@@ -53,4 +61,4 @@ As a user I want to be able to keep as many grocery lists as I want.
 # Problems encountered
 As soon as I tried to connect the frontend with the backend of this project I encountered a CORS error which I solved by creating a proxy. Solution found here: https://angular.io/guide/build#proxying-to-a-backend-server
 
-I created modals to display certain information but it was difficult to make them work as intented. I solved this problem by following the guidance found here: https://stackoverflow.com/questions/62827002/bootstrap-v5-manually-call-a-modal-mymodal-show-not-working-vanilla-javascrip
+I created pop-up bootstrap modals to display certain information but it was difficult to make them work as intended. I solved this problem by following the guidance found here: https://stackoverflow.com/questions/62827002/bootstrap-v5-manually-call-a-modal-mymodal-show-not-working-vanilla-javascrip

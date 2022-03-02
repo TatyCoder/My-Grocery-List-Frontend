@@ -4,3 +4,9 @@ This repository is broken down into two parts: this README.md is in the root of 
 
 
 This was done this way to facilitate deployment to *Heroku* since it looks in the root folder to decide how to deploy. This deployment strategy was chosen for its simplicity for resolving the issue with *CORS* and it follows the approach used by *ng serve*
+
+
+## How to access the application 
+
+The application is deployed to *Heroku* and can be accessed with this link:
+https://my-grocery-list-app-fe.herokuapp.com/
